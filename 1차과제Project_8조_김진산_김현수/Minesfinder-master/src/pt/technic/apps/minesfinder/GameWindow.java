@@ -1,6 +1,10 @@
 package pt.technic.apps.minesfinder;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +12,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.*;
 
@@ -18,15 +27,27 @@ import javax.swing.border.*;
  */
 public class GameWindow extends javax.swing.JFrame {
 
+	JMenuBar jmb = new JMenuBar();
+	JMenu jm = new JMenu();
     private ButtonMinefield[][] buttons;
     private Minefield minefield;
     private RecordTable record;
     private boolean isLeftPressed;
     private boolean isRightPressed;
     private SoundEffect clickE;	//BGM
+    //格见-----------------
+    public static int moksum = 0;
+    //-----------------
     /**
      * Creates new form GameWindow
      */
+   
+    public static int getMoksum() {
+    	return moksum;
+    }
+    public static void setMoksum(int setmoksum) {
+    	moksum = setmoksum;
+    }
     public GameWindow() {
         initComponents();
     }
@@ -48,12 +69,13 @@ public class GameWindow extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 ButtonMinefield button = (ButtonMinefield) e.getSource();
                 int x = button.getCol();
-                int y = button.getLine();
-                minefield.revealGrid(x, y);
+                int y = button.getLine();               
+                minefield.revealGrid(x, y);               
                 //BGM
                 clickE.startClip();
-                //BGM
-                updateButtonsStates();
+                //BGM                
+                updateButtonsStates(); 
+              
                 if (minefield.isGameFinished()) {
                     if (minefield.isPlayerDefeated()) {
                         JOptionPane.showMessageDialog(null, "Oh, a mine broke",
@@ -188,8 +210,9 @@ public class GameWindow extends javax.swing.JFrame {
         buttons = new ButtonMinefield[minefield.getWidth()][minefield.getHeight()];
 
         getContentPane().setLayout(new GridLayout(minefield.getWidth(),
-                minefield.getHeight()));
-
+                minefield.getHeight()));        
+        
+        
         ActionListener action = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -197,6 +220,9 @@ public class GameWindow extends javax.swing.JFrame {
                 int x = button.getCol();
                 int y = button.getLine();
                 minefield.revealGrid(x, y);
+                //-----------------------------------------
+                jm.setText("巢篮 格见 : " + Integer.toString(getMoksum()));
+                //---------------------------------------
                 //BGM
                 clickE.startClip();
                 //BGM
@@ -284,44 +310,44 @@ public class GameWindow extends javax.swing.JFrame {
             }
         };
 
-        KeyListener keyListener = new KeyListener() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                ButtonMinefield botao = (ButtonMinefield) e.getSource();
-                int x = botao.getWidth();
-                int y = botao.getHeight();
-                if (e.getKeyCode() == KeyEvent.VK_UP && y > 0) {
-                    buttons[x][y - 1].requestFocus();
-                } else if (e.getKeyCode() == KeyEvent.VK_LEFT && x > 0) {
-                    buttons[x - 1][y].requestFocus();
-                } else if (e.getKeyCode() == KeyEvent.VK_DOWN && y
-                        < minefield.getHeight() - 1) {
-                    buttons[x][y + 1].requestFocus();
-                } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && x
-                        < minefield.getWidth() - 1) {
-                    buttons[x + 1][y].requestFocus();
-                } else if (e.getKeyCode() == KeyEvent.VK_M) {
-                    if (minefield.getGridState(x, y) == minefield.COVERED) {
-                        minefield.setMineMarked(x, y);
-                    } else if (minefield.getGridState(x,
-                            y) == minefield.MARKED) {
-                        minefield.setMineQuestion(x, y);
-                    } else if (minefield.getGridState(x,
-                            y) == minefield.QUESTION) {
-                        minefield.setMineCovered(x, y);
-                    }
-                    updateButtonsStates();
-                }
-            }
-
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-
-            @Override
-            public void keyReleased(KeyEvent ke) {
-            }
-        };
+//        KeyListener keyListener = new KeyListener() {
+//            @Override
+//            public void keyPressed(KeyEvent e) {
+//                ButtonMinefield botao = (ButtonMinefield) e.getSource();
+//                int x = botao.getWidth();
+//                int y = botao.getHeight();
+//                if (e.getKeyCode() == KeyEvent.VK_UP && y > 0) {
+//                    buttons[x][y - 1].requestFocus();
+//                } else if (e.getKeyCode() == KeyEvent.VK_LEFT && x > 0) {
+//                    buttons[x - 1][y].requestFocus();
+//                } else if (e.getKeyCode() == KeyEvent.VK_DOWN && y
+//                        < minefield.getHeight() - 1) {
+//                    buttons[x][y + 1].requestFocus();
+//                } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && x
+//                        < minefield.getWidth() - 1) {
+//                    buttons[x + 1][y].requestFocus();
+//                } else if (e.getKeyCode() == KeyEvent.VK_M) {
+//                    if (minefield.getGridState(x, y) == minefield.COVERED) {
+//                        minefield.setMineMarked(x, y);
+//                    } else if (minefield.getGridState(x,
+//                            y) == minefield.MARKED) {
+//                        minefield.setMineQuestion(x, y);
+//                    } else if (minefield.getGridState(x,
+//                            y) == minefield.QUESTION) {
+//                        minefield.setMineCovered(x, y);
+//                    }
+//                    updateButtonsStates();
+//                }
+//            }
+//
+//            @Override
+//            public void keyTyped(KeyEvent ke) {
+//            }
+//
+//            @Override
+//            public void keyReleased(KeyEvent ke) {
+//            }
+//        };
         
         // Create buttons for the player
         for (int x = 0; x < minefield.getWidth(); x++) {
@@ -329,7 +355,7 @@ public class GameWindow extends javax.swing.JFrame {
                 buttons[x][y] = new ButtonMinefield(x, y);
                 buttons[x][y].addActionListener(action);
                 buttons[x][y].addMouseListener(mouseListener);
-                buttons[x][y].addKeyListener(keyListener);
+//                buttons[x][y].addKeyListener(keyListener);
                 getContentPane().add(buttons[x][y]);
             }
         }
@@ -355,9 +381,14 @@ public class GameWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Game");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
+         //-------------------------------------------------------------------              
+        jm.setText("巢篮 格见 : " + Integer.toString(getMoksum()));
+        jmb.add(jm);
+        setJMenuBar(jmb); 
+        //-------------------------------------------------------------------
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        getContentPane().setLayout(layout); 
+        
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1094, Short.MAX_VALUE)
@@ -366,7 +397,8 @@ public class GameWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 553, Short.MAX_VALUE)
         );
-
+        
+       
         pack();
     }// </editor-fold>//GEN-END:initComponents
 

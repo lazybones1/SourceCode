@@ -140,7 +140,7 @@ public class MinesFinder extends javax.swing.JFrame {
         btnHard = new javax.swing.JButton();
         btn2p = new javax.swing.JButton(); // 2p
         btnCustom = new javax.swing.JButton(); //»ç¿ëÀÚ¼³Á¤°ÔÀÓ
-        btnReplay = new javax.swing.JButton();//log
+        btnchallenge= new javax.swing.JButton();//log
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -281,15 +281,17 @@ public class MinesFinder extends javax.swing.JFrame {
                 btnCustomActionPerformed(evt);
             }
         });
-        panelBtns.add(btnCustom); //»ç¿ëÀÚ¼³Á¤°ÔÀÓ
+        //----------------------------------------------------------------------
+        panelBtns.add(btnCustom); //challenge
         
-        btnReplay.setText("Replay"); //log
-        btnReplay.addActionListener(new java.awt.event.ActionListener() {
+        btnchallenge.setText("challenge"); //challenge
+        btnchallenge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReplayActionPerformed(evt);
+                btnChallengeActionPerformed(evt);
             }
         });
-        panelBtns.add(btnReplay); //»ç¿ëÀÚ¼³Á¤°ÔÀÓ
+        panelBtns.add(btnchallenge); //challenge
+        //------------------------------------------------------------------------
         
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -324,13 +326,16 @@ public class MinesFinder extends javax.swing.JFrame {
 		}
 	}
 
-	protected void btnReplayActionPerformed(ActionEvent evt) {//log
+	protected void btnChallengeActionPerformed(ActionEvent evt) {//log
 		// TODO Auto-generated method stub
 		
 	}
 
 	private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEasyActionPerformed
-        GameWindow gameWindow = new GameWindow(new Minefield(9, 9, 10), recordEasy);
+		//¸ñ¼û---------------------
+        GameWindow.setMoksum(1);
+        //¸ñ¼û-----------------------
+		GameWindow gameWindow = new GameWindow(new Minefield(9, 9, 10), recordEasy);      
         gameWindow.setVisible(true);
     }//GEN-LAST:event_btnEasyActionPerformed
 
@@ -339,12 +344,18 @@ public class MinesFinder extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMediumActionPerformed
-        GameWindow gameWindow = new GameWindow(new Minefield(16, 16, 40), recordMedium);
+    	//¸ñ¼û---------------------
+        GameWindow.setMoksum(2);
+        //¸ñ¼û-----------------------
+        GameWindow gameWindow = new GameWindow(new Minefield(16, 16, 40), recordMedium);        
         gameWindow.setVisible(true);
     }//GEN-LAST:event_btnMediumActionPerformed
 
     private void btnHardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHardActionPerformed
-        GameWindow gameWindow = new GameWindow(new Minefield(16, 30, 90), recordHard);
+    	//¸ñ¼û---------------------
+        GameWindow.setMoksum(3);
+        //¸ñ¼û-----------------------
+        GameWindow gameWindow = new GameWindow(new Minefield(16, 30, 90), recordHard);        
         gameWindow.setVisible(true);
     }//GEN-LAST:event_btnHardActionPerformed
     protected void btnCustomActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCustomActionPerformed
@@ -417,7 +428,7 @@ public class MinesFinder extends javax.swing.JFrame {
     private javax.swing.JButton btnMedium;
     private javax.swing.JButton btn2p; //2p
     private javax.swing.JButton btnCustom; // »ç¿ëÀÚ¼³Á¤°ÔÀÓ
-    private javax.swing.JButton btnReplay;//log
+    private javax.swing.JButton btnchallenge;//challenge
     private javax.swing.JLabel labelEasy;
     private javax.swing.JLabel labelEasyName;
     private javax.swing.JLabel labelEasyPoints;

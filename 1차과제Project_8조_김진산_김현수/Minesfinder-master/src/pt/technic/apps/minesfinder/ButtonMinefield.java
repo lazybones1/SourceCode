@@ -19,7 +19,7 @@ public class ButtonMinefield extends JButton {
     public void setEstado(int state) {
         this.state=state;
         
-        SoundEffect boomE = new SoundEffect("src/pt/technic/apps/minesfinder/music/Æø¹ß1.wav");
+      
         switch (state) {
             case Minefield.EMPTY:
                 setText("");
@@ -38,8 +38,7 @@ public class ButtonMinefield extends JButton {
                 setBackground(Color.red);
                 break;
             case Minefield.BUSTED:
-                setText("*");
-                boomE.startClip();
+                setText("*");               
                 setBackground(Color.orange);
                 break;
             default:

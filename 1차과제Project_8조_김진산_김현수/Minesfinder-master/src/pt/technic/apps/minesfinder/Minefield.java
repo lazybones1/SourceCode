@@ -63,9 +63,19 @@ public class Minefield {
 
             if (mines[x][y]) {
                 states[x][y] = BUSTED;
-                playerDefeated = true;
-                gameFinished = true;
-                timeGameDuration=System.currentTimeMillis()-timeGameStarted;
+                // 
+                SoundEffect boomE = new SoundEffect("src/pt/technic/apps/minesfinder/music/Æø¹ß1.wav");
+                boomE.startClip();
+                //                
+                if(GameWindow.getMoksum() == 1) {     
+                	GameWindow.setMoksum(GameWindow.getMoksum()-1);
+                	playerDefeated = true;
+                    gameFinished = true;
+                    timeGameDuration=System.currentTimeMillis()-timeGameStarted;
+                }
+                else {
+                	GameWindow.setMoksum(GameWindow.getMoksum()-1); 
+                }
                 return;
             }
 
