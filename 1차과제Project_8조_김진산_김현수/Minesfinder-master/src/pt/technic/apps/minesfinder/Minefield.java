@@ -67,8 +67,11 @@ public class Minefield {
                 SoundEffect boomE = new SoundEffect("src/pt/technic/apps/minesfinder/music/Æø¹ß1.wav");
                 boomE.startClip();
                 //                
-                if(GameWindow.getMoksum() == 1) {     
+                if(GameWindow.getMoksum() == 1) {
                 	GameWindow.setMoksum(GameWindow.getMoksum()-1);
+                	if(MinesFinder.challenge) {
+                		MinesFinder.setChallenge(false);
+                	}
                 	playerDefeated = true;
                     gameFinished = true;
                     timeGameDuration=System.currentTimeMillis()-timeGameStarted;
@@ -88,7 +91,7 @@ public class Minefield {
             
             if(checkVictory()) {
                 gameFinished=true;
-                playerDefeated=false;
+                playerDefeated=false;                
                 timeGameDuration=System.currentTimeMillis()-timeGameStarted;
                 return;
             }

@@ -36,7 +36,7 @@ public class GameWindow extends javax.swing.JFrame {
     private boolean isRightPressed;
     private SoundEffect clickE;	//BGM
     //¸ñ¼û-----------------
-    public static int moksum = 0;
+    public static int moksum = 1;
     //-----------------
     /**
      * Creates new form GameWindow
@@ -83,8 +83,18 @@ public class GameWindow extends javax.swing.JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "Congratulations. You managed to discover all the mines in "
                                 + (minefield.getGameDuration() / 1000) + " seconds",
-                                "victory", JOptionPane.INFORMATION_MESSAGE
+                                "victory", JOptionPane.INFORMATION_MESSAGE                                
                         );                                      
+                      //--------------------------------------------------------
+                        if(MinesFinder.getChallenge()) {
+                        	MinesFinder.setChallengeMinesNum(MinesFinder.getChallengeMinesNum()+4);
+                        	MinesFinder.setChallengeWidth(MinesFinder.getChallengeWidth()+3);
+                        	MinesFinder.setChallegneHeight(MinesFinder.getChallegneHeight()+3);
+                        	setMoksum(1);
+                        	GameWindow gameWindow = new GameWindow(new Minefield(MinesFinder.getChallengeWidth(),MinesFinder.getChallegneHeight(),MinesFinder.getChallengeMinesNum()));
+                    		gameWindow.setVisible(true);
+                        }
+                        //-------------------------------------------------------
                     }
                     setVisible(false);
                 }

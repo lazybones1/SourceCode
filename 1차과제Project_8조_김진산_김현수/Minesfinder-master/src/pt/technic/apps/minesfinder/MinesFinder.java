@@ -24,7 +24,36 @@ public class MinesFinder extends javax.swing.JFrame {
     private RecordTable recordEasy;
     private RecordTable recordMedium;
     private RecordTable recordHard;
-
+     //--------------------------------------------
+    static int challengeWidth = 0;
+	static int challegneHeight = 0;
+	static int challengeMinesNum = 0;
+	static boolean challenge = false;
+	public static boolean getChallenge() {
+		return challenge;
+	}
+	public static void setChallenge(boolean chal) {
+		challenge = chal;		
+	}
+	public static int getChallengeWidth() {
+		return challengeWidth;
+	}
+	public static void setChallengeWidth(int width) {
+		challengeWidth = width;		
+	}
+	public static int getChallegneHeight() {
+		return challegneHeight;
+	}
+	public static void setChallegneHeight(int height) {
+		challegneHeight = height;		
+	}
+	public static int getChallengeMinesNum() {
+		return challengeMinesNum;
+	}
+	public static void setChallengeMinesNum(int mines) {
+		challengeMinesNum = mines;		
+	}
+	//-----------------------------------------
     /**
      * Creates new form MinesFinder
      */
@@ -274,24 +303,24 @@ public class MinesFinder extends javax.swing.JFrame {
             }
         });
         panelBtns.add(btnHard);
-
+        //custom-------------------------------------------------------------
         btnCustom.setText("Custom");
         btnCustom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomActionPerformed(evt);
             }
-        });
-        //----------------------------------------------------------------------
+        });        
         panelBtns.add(btnCustom); //challenge
-        
+      //----------------------------------------------------------------------
         btnchallenge.setText("challenge"); //challenge
         btnchallenge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChallengeActionPerformed(evt);
             }
         });
-        panelBtns.add(btnchallenge); //challenge
-        //------------------------------------------------------------------------
+        panelBtns.add(btnchallenge); //challenge     //------------------------------------------------------------------------
+        
+        
         
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -324,12 +353,7 @@ public class MinesFinder extends javax.swing.JFrame {
 					new Minefield(16,16,40), userName.getText());
 			clientgameWindow.setVisible(true);
 		}
-	}
-
-	protected void btnChallengeActionPerformed(ActionEvent evt) {//log
-		// TODO Auto-generated method stub
-		
-	}
+	}	
 
 	private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEasyActionPerformed
 		//목숨---------------------
@@ -363,6 +387,7 @@ public class MinesFinder extends javax.swing.JFrame {
 		JTextField customWidth = new JTextField(5);
 		JTextField customHeight = new JTextField(5);
 		JTextField customMinesNum = new JTextField(5);
+		JTextField Life = new JTextField(5);
 		
 		JPanel customPanel = new JPanel();
 		customPanel.add(new JLabel("W"));
@@ -371,14 +396,33 @@ public class MinesFinder extends javax.swing.JFrame {
 		customPanel.add(customHeight);
 		customPanel.add(new JLabel("M"));
 		customPanel.add(customMinesNum);
+		customPanel.add(new JLabel("L"));
+		customPanel.add(Life);
+		
+		
 		
 		int result = JOptionPane.showConfirmDialog(null, customPanel,"Please Enter details", JOptionPane.OK_CANCEL_OPTION);
 		if(result == JOptionPane.OK_OPTION) {
+			GameWindow.setMoksum(Integer.parseInt(Life.getText()));
 			GameWindow gameWindow = new GameWindow(new Minefield(Integer.parseInt(customWidth.getText()),Integer.parseInt(customHeight.getText()),Integer.parseInt(customMinesNum.getText())));
 			gameWindow.setVisible(true);
 		}
 	}//GEN-LAST:event_btnCustomActionPerformed
     //사용자 설정게임
+    //첼린지모드------------------------------------------------------------------------------
+    protected void btnChallengeActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnCustomActionPerformed
+		challengeWidth = 4;
+		challegneHeight = 4;
+		challengeMinesNum = 1;
+		GameWindow.setMoksum(1);
+		setChallenge(true);
+		GameWindow gameWindow = new GameWindow(new Minefield(challengeWidth,challegneHeight,challengeMinesNum));
+		gameWindow.setVisible(true);
+		
+	}
+    //----------------------------------------------------------------
+    
+    
 
     /**
      * @param args the command line arguments
