@@ -9,53 +9,53 @@ import java.util.ArrayList;
  */
 public class RecordTable implements Serializable {
 
-    private transient final int MAX_CHAR = 10;
-    
-    private String name;
-    private long score;
+	private transient final int MAX_CHAR = 10;
 
-    private transient ArrayList<RecordTableListener> listeners;
+	private String name;
+	private long score;
 
-    public RecordTable() {
-        name = "Anonymous";
-        score = 9999999;
-        listeners = new ArrayList<>();
-    }
+	private transient ArrayList<RecordTableListener> listeners;
 
-    public String getName() {
-        return name.substring(0, Math.min(MAX_CHAR, name.length()));
-    }
+	public RecordTable() {
+		name = "Anonymous";
+		score = 9999999;
+		listeners = new ArrayList<>();
+	}
 
-    public long getScore() {
-        return score;
-    }
+	public String getName() {
+		return name.substring(0, Math.min(MAX_CHAR, name.length()));
+	}
 
-    public void setRecord(String name, long score) {
-        if (score < this.score) {
-            this.name = name;
-            this.score = score;
-            notifyRecordTableUpdated();
-        }
-    }
+	public long getScore() {
+		return score;
+	}
 
-    public void addRecordTableListener(RecordTableListener list) {
-        if (listeners == null) {
-            listeners = new ArrayList<>();
-        }
-        listeners.add(list);
-    }
+	public void setRecord(String name, long score) {
+		if (score < this.score) {
+			this.name = name;
+			this.score = score;
+			notifyRecordTableUpdated();
+		}
+	}
 
-    public void removeRecordTableListener(RecordTableListener list) {
-        if (listeners != null) {
-            listeners.remove(list);
-        }
-    }
+	public void addRecordTableListener(RecordTableListener list) {
+		if (listeners == null) {
+			listeners = new ArrayList<>();
+		}
+		listeners.add(list);
+	}
 
-    private void notifyRecordTableUpdated() {
-        if (listeners != null) {
-            for (RecordTableListener list : listeners) {
-                list.recordUpdated(this);
-            }
-        }
-    }
+	public void removeRecordTableListener(RecordTableListener list) {
+		if (listeners != null) {
+			listeners.remove(list);
+		}
+	}
+
+	private void notifyRecordTableUpdated() {
+		if (listeners != null) {
+			for (RecordTableListener list : listeners) {
+				list.recordUpdated(this);
+			}
+		}
+	}
 }
