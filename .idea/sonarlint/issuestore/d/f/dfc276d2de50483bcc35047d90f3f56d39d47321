@@ -1,0 +1,13 @@
+
+?squid:S1948H"(Make "action" transient or serializable.(¶íóĞ
+Lsquid:S2209m"5Change this instance-reference to a static reference.(Šî’õ
+˜squid:S1186y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ñÜš¤
+Qsquid:S2209q"5Change this instance-reference to a static reference.(»ô¹Òüÿÿÿÿ
+¥squid:S1186†"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ë´çıÿÿÿÿ8ÅšğÚí-
+Gsquid:S1948"+Make "minefield" transient or serializable.(ª¾Ó³úÿÿÿÿ
+Lsquid:S2209o"5Change this instance-reference to a static reference.(´Á»¦
+?squid:S1604H"(Make this anonymous inner class a lambda(¶íóĞ
+esquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(ºšßÏ
+squid:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œº´‚üÿÿÿÿ
+Msquid:S2387X"6"mouseListener" is the name of a field in "Component".(ø¸åì
+Fsquid:S1948X"/Make "mouseListener" transient or serializable.(ø¸åì

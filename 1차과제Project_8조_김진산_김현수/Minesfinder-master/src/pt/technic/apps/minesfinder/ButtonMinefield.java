@@ -8,7 +8,9 @@ import javax.swing.JButton;
  * @author Gabriel Massadas
  */
 public class ButtonMinefield extends JButton {
-	private int state, col, line;
+	private int state;
+	private int col;
+	private int line;
 
 	public ButtonMinefield(int col, int line) {
 		this.col = col;

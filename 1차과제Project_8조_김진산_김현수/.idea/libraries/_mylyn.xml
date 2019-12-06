@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name=".mylyn">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Minesfinder-master/bin/.metadata/.mylyn/tasks.xml.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Minesfinder-master/bin/.metadata/.mylyn/.tasks.xml.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Minesfinder-master/bin/.metadata/.mylyn/repositories.xml.zip!/" />
+      <root url="jar://C:/Program Files/Java/jre1.8.0_231/lib/ext/jfxrt.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

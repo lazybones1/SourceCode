@@ -1,0 +1,39 @@
+
+vsquid:S1450•"YRemove the "panelTitle" field and declare it as a local variable in the relevant methods.(æÎ¸ıÿÿÿÿ
+fsquid:S2095c"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(¾Á÷ı
+lsquid:S1450‡"TRemove the "btn2p" field and declare it as a local variable in the relevant methods.(›©Â
+?squid:S1604("(Make this anonymous inner class a lambda(Üö¼¯
+Osquid:S1135Ô"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Gsquid:S1172Ê"*Remove this unused method parameter "evt".(ùâ‹şÿÿÿÿ
+@squid:S1604å"(Make this anonymous inner class a lambda(¬´…É
+Esquid:S1604"(Make this anonymous inner class a lambda(ñ¨Àúÿÿÿÿ
+ssquid:S1450ƒ"VRemove the "btnEasy" field and declare it as a local variable in the relevant methods.(Ë“Ûğşÿÿÿÿ
+ssquid:S1450„"VRemove the "btnExit" field and declare it as a local variable in the relevant methods.(¾Üø˜ıÿÿÿÿ
+psquid:S1450†"XRemove the "btnMedium" field and declare it as a local variable in the relevant methods.(¾õ
+usquid:S1450“"XRemove the "panelBtns" field and declare it as a local variable in the relevant methods.(œ–êüÿÿÿÿ
+Bsquid:S1172ı"*Remove this unused method parameter "evt".(£‚êÿ
+Esquid:S1604ù"(Make this anonymous inner class a lambda(ìùòÄøÿÿÿÿ
+ssquid:S1450‚"VRemove the "Records" field and declare it as a local variable in the relevant methods.(±®¬‰ûÿÿÿÿ
+dsquid:S1192¡"GDefine a constant instead of duplicating this literal "Player" 3 times.(İ›„—úÿÿÿÿ
+Dsquid:S1604/"(Make this anonymous inner class a lambda(·’ı²şÿÿÿÿ
+psquid:S1450"XRemove the "labelHard" field and declare it as a local variable in the relevant methods.(¤÷ßı
+Esquid:S1604Œ"(Make this anonymous inner class a lambda(Ï•–œùÿÿÿÿ
+@squid:S1604ƒ"(Make this anonymous inner class a lambda(ô“ÇÅ
+ssquid:S1450‰"[Remove the "btnchallenge" field and declare it as a local variable in the relevant methods.(Å½ü
+ssquid:S1450”"[Remove the "panelRecords" field and declare it as a local variable in the relevant methods.(Î©Ãû
+Dsquid:S16046"(Make this anonymous inner class a lambda(ŠÓœÛÿÿÿÿÿ
+psquid:S1450Š"XRemove the "labelEasy" field and declare it as a local variable in the relevant methods.(İ€°ù
+Bsquid:S1172º"*Remove this unused method parameter "evt".(§ƒÆ®
+Gsquid:S1172Â"*Remove this unused method parameter "evt".(Ûšñƒùÿÿÿÿ
+@squid:S1604ï"(Make this anonymous inner class a lambda(¿ùôÏ
+gsquid:S2095T"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß•¢´
+gsquid:S1192™"JDefine a constant instead of duplicating this literal "Noto Sans" 4 times.(—ÎÖ­øÿÿÿÿ
+esquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(Ùé„
+Gsquid:S1172¬"*Remove this unused method parameter "evt".(úÛ÷ªøÿÿÿÿ
+psquid:S00116‚"RRename this field "Records" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±®¬‰ûÿÿÿÿ
+ssquid:S1450…"VRemove the "btnHard" field and declare it as a local variable in the relevant methods.(±ÿ®ûÿÿÿÿ
+wsquid:S1450"ZRemove the "labelMedium" field and declare it as a local variable in the relevant methods.(œòúèûÿÿÿÿ
+Gsquid:S1172Ó"*Remove this unused method parameter "evt".(†ˆíÃùÿÿÿÿ
+@squid:S1604•"(Make this anonymous inner class a lambda(ü˜Îí
+psquid:S1450ˆ"XRemove the "btnCustom" field and declare it as a local variable in the relevant methods.(×¾˜­
+Bsquid:S1172ğ"*Remove this unused method parameter "evt".(¸ÉßŒ

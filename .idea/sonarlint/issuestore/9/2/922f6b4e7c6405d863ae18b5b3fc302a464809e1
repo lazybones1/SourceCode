@@ -1,0 +1,4 @@
+
+jsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Â—³Æ
+?squid:S1170"!Make this final field static too.(Â—³Æ8¿¤©Øí-
+rsquid:S00116"SRename this field "MAX_CHAR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â—³Æ8¿¤©Øí-

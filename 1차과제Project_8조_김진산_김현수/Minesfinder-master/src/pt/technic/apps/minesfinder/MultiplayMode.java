@@ -1,21 +1,13 @@
 package pt.technic.apps.minesfinder;
 
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import javafx.application.Platform;
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-
-import javafx.application.Platform;
 
 public class MultiplayMode extends GameWindow {
 
@@ -29,96 +21,27 @@ public class MultiplayMode extends GameWindow {
 		initComponents();
 		setTitle("Multi Game");
 
-		isLeftPressed = false;
-		isRightPressed = false;
-
 		this.minefield = minefield;
-
 		buttons = new ButtonMinefield[minefield.getWidth()][minefield.getHeight()];
-
 		getContentPane().setLayout(new GridLayout(minefield.getWidth(), minefield.getHeight()));
+		createButtons();
 
-		ActionListener action = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ButtonMinefield button = (ButtonMinefield) e.getSource();
-				int x = button.getCol();
-				int y = button.getLine();
-				minefield.revealGrid(x, y);
-				updateButtonsStates();
-				if (minefield.isGameFinished()) {
-					if (minefield.isPlayerDefeated()) {
-						send(userName + " " + "broke");
-					} else {
-						send(userName + "  " + "finish");
+	}
 
-					}
-				}
+	@Override
+	protected void clickEvent() {
+		if (minefield.isGameFinished()) {
+			if (minefield.isPlayerDefeated()) {
+				send(userName + " " + "broke");
+			} else {
+				send(userName + "  " + "finish");
 			}
-		};
-
-		MouseListener mouseListener = new MouseListener() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				if (SwingUtilities.isLeftMouseButton(e)) {
-					isLeftPressed = true;
-				} else if (SwingUtilities.isRightMouseButton(e)) {
-					isRightPressed = true;
-				}
-
-				if (isLeftPressed && isRightPressed) {
-
-				}
-
-				if (e.getButton() == MouseEvent.BUTTON3) {
-					ButtonMinefield botao = (ButtonMinefield) e.getSource();
-					int x = botao.getCol();
-					int y = botao.getLine();
-					if (minefield.getGridState(x, y) == minefield.COVERED) {
-						minefield.setMineMarked(x, y);
-					} else if (minefield.getGridState(x, y) == minefield.MARKED) {
-						minefield.setMineQuestion(x, y);
-					} else if (minefield.getGridState(x, y) == minefield.QUESTION) {
-						minefield.setMineCovered(x, y);
-					}
-					updateButtonsStates();
-				}
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent me) {
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				if (SwingUtilities.isLeftMouseButton(e)) {
-					isLeftPressed = false;
-				} else if (SwingUtilities.isRightMouseButton(e)) {
-					isRightPressed = false;
-				}
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent me) {
-			}
-
-			@Override
-			public void mouseExited(MouseEvent me) {
-			}
-		};
-
-		// Create buttons for the player
-		for (int x = 0; x < minefield.getWidth(); x++) {
-			for (int y = 0; y < minefield.getHeight(); y++) {
-				buttons[x][y] = new ButtonMinefield(x, y);
-				buttons[x][y].addActionListener(action);
-				buttons[x][y].addMouseListener(mouseListener);
-				getContentPane().add(buttons[x][y]);
-			}
+			//임시
+			setVisible(false);
 		}
 	}
 
-	// 클라이언트 메소드
+	//
 	private void startClient(String IP, int port) {
 		Thread thread = new Thread() {
 			public void run() {
@@ -128,7 +51,7 @@ public class MultiplayMode extends GameWindow {
 				} catch (Exception e) {
 					if (!socket.isClosed()) {
 						stopClient();
-						System.out.println("서버 접속 실패");
+						System.out.println("server access fail");
 						Platform.exit();
 					}
 				}
@@ -137,7 +60,8 @@ public class MultiplayMode extends GameWindow {
 		};
 		thread.start();
 	}
-	//public -> private
+
+	// public -> private
 	private void stopClient() {
 		try {
 			if (socket != null && !socket.isClosed()) {
@@ -147,7 +71,8 @@ public class MultiplayMode extends GameWindow {
 			e.printStackTrace();
 		}
 	}
-	//public -> private
+
+	// public -> private
 	private void receive() {
 		while (true) {
 			try {
@@ -183,8 +108,9 @@ public class MultiplayMode extends GameWindow {
 			}
 		}
 	}
-	//public -> private
-	private void send(String message) { 
+
+	// public -> private
+	private void send(String message) {
 		Thread thread = new Thread() {
 			public void run() {
 				try {

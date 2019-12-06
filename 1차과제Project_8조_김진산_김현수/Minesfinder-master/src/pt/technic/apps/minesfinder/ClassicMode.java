@@ -1,15 +1,25 @@
 package pt.technic.apps.minesfinder;
 
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
+import java.awt.*;
 
 public class ClassicMode extends GameWindow {
+
+	@Override
+	protected void victoryAction() {
+		JOptionPane.showMessageDialog(
+				null, "Congratulations. You managed to discover all the mines in "
+						+ (minefield.getGameDuration() / 1000) + " seconds",
+				"victory", JOptionPane.INFORMATION_MESSAGE);
+		boolean newRecord = minefield.getGameDuration() < record.getScore();
+
+		if (newRecord) {
+			String name = JOptionPane.showInputDialog("Enter your name");
+			if (!name.equals(""))
+				record.setRecord(name, minefield.getGameDuration());
+		}
+	}
+
 	public ClassicMode(Minefield minefield, RecordTable record) {
 
 		initComponents();
@@ -23,105 +33,8 @@ public class ClassicMode extends GameWindow {
 
 		getContentPane().setLayout(new GridLayout(minefield.getWidth(), minefield.getHeight()));
 
-		ActionListener action = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ButtonMinefield button = (ButtonMinefield) e.getSource();
-				int x = button.getCol();
-				int y = button.getLine();
-				minefield.revealGrid(x, y);
-				// -----------------------------------------
-				jm.setText("남은 목숨 : " + Integer.toString(getMoksum()));
-				// ---------------------------------------
+		createButtons();
 
-				updateButtonsStates();
-				if (minefield.isGameFinished()) {
-					if (minefield.isPlayerDefeated()) {
-						JOptionPane.showMessageDialog(null, "Oh, a mine broke", "Lost!",
-								JOptionPane.INFORMATION_MESSAGE);
-					} else {
-						JOptionPane.showMessageDialog(null,
-								"Congratulations. You managed to discover all the mines in "
-										+ (minefield.getGameDuration() / 1000) + " seconds",
-								"victory", JOptionPane.INFORMATION_MESSAGE);
-						long a = minefield.getGameDuration();
-						long b = record.getScore();
-						boolean newRecord = minefield.getGameDuration() < record.getScore();
-
-						if (newRecord) {
-							String name = JOptionPane.showInputDialog("Enter your name");
-							if (name != "")
-								record.setRecord(name, minefield.getGameDuration());
-						}
-					}
-					setVisible(false);
-				}
-			}
-		};
-
-		MouseListener mouseListener = new MouseListener() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// 양클릭--------------------------------------------------------------------------------
-				ButtonMinefield botao = (ButtonMinefield) e.getSource();
-				int x = botao.getCol();
-				int y = botao.getLine();
-				if (minefield.getGridState(x, y) >= 1 && minefield.getGridState(x, y) <= 8) {
-					if (SwingUtilities.isLeftMouseButton(e)) {
-						isLeftPressed = true;
-					} else if (SwingUtilities.isRightMouseButton(e)) {
-						isRightPressed = true;
-					}
-
-					if (isLeftPressed && isRightPressed) {
-
-						minefield.doubleCliked(x, y);
-					}
-				}
-				// -------------------------------------------------------------------------------
-				if (e.getButton() == MouseEvent.BUTTON3) {
-					if (minefield.getGridState(x, y) == minefield.COVERED) {
-						minefield.setMineMarked(x, y);
-					} else if (minefield.getGridState(x, y) == minefield.MARKED) {
-						minefield.setMineQuestion(x, y);
-					} else if (minefield.getGridState(x, y) == minefield.QUESTION) {
-						minefield.setMineCovered(x, y);
-					}
-					updateButtonsStates();
-				}
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent me) {
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				if (SwingUtilities.isLeftMouseButton(e)) {
-					isLeftPressed = false;
-				} else if (SwingUtilities.isRightMouseButton(e)) {
-					isRightPressed = false;
-				}
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent me) {
-			}
-
-			@Override
-			public void mouseExited(MouseEvent me) {
-			}
-		};
-
-		// Create buttons for the player
-		for (int x = 0; x < minefield.getWidth(); x++) {
-			for (int y = 0; y < minefield.getHeight(); y++) {
-				buttons[x][y] = new ButtonMinefield(x, y);
-				buttons[x][y].addActionListener(action);
-				buttons[x][y].addMouseListener(mouseListener);
-				getContentPane().add(buttons[x][y]);
-			}
-		}
 	}
 
 }

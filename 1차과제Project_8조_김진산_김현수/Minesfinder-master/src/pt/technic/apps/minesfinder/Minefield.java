@@ -63,20 +63,19 @@ public class Minefield {
 
 			if (mines[x][y]) {
 				states[x][y] = BUSTED;
-				//
-				SoundEffect boomE = new SoundEffect("src/pt/technic/apps/minesfinder/music/Æø¹ß1.wav");
-				boomE.startClip();
-				//
-				if (GameWindow.getMoksum() == 1) {
-					GameWindow.setMoksum(GameWindow.getMoksum() - 1);
-					if (ChallengeMode.getChallenge()) {
+				
+				SoundEffect.boomClip();
+				
+				if (GameWindow.getLife() == 1) {
+					GameWindow.setLife(GameWindow.getLife() - 1);
+					if (ChallengeMode.isChallenge()) {
 						ChallengeMode.setChallenge(false);
 					}
 					playerDefeated = true;
 					gameFinished = true;
 					timeGameDuration = System.currentTimeMillis() - timeGameStarted;
 				} else {
-					GameWindow.setMoksum(GameWindow.getMoksum() - 1);
+					GameWindow.setLife(GameWindow.getLife() - 1);
 				}
 				return;
 			}
@@ -215,7 +214,6 @@ public class Minefield {
 				}
 			}
 		}
-		sum = 0;
 	}
 
 	// --------------------------------------------------------------------------------------------------
