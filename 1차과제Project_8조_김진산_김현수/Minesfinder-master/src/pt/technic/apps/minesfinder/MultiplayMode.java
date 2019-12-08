@@ -19,7 +19,8 @@ public class MultiplayMode extends GameWindow {
 	private String userName;
 
 	public MultiplayMode(Minefield minefield, String userName) {
-		startClient("211.33.5.110", 9999);
+		
+		startClient("211.33.5.110", 9999); //write your Server IP and port
 
 		this.userName = userName;
 		GameWindow.setLife(1);
@@ -44,6 +45,7 @@ public class MultiplayMode extends GameWindow {
 		}
 	}
 
+	
 	private void startClient(String IP, int port) {
 		Thread thread = new Thread() {
 			public void run() {

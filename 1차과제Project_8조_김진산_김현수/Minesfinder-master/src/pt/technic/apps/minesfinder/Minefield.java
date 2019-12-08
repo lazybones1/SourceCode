@@ -2,6 +2,10 @@ package pt.technic.apps.minesfinder;
 
 import java.util.Random;
 
+/**
+ *
+ * @author Gabriel Massadas
+ */
 public class Minefield {
 
 	public static final int EMPTY = 0;
@@ -108,18 +112,18 @@ public class Minefield {
 		}
 	}
 
-	public void setMineMarked(int x, int y) {
-		states[x][y] = MARKED;
+	public void setMineMarked(int x, int y) {		
+			states[x][y] = MARKED;		
 	}
 
-	public void setMineQuestion(int x, int y) {
-		states[x][y] = QUESTION;
+	public void setMineQuestion(int x, int y) {		
+			states[x][y] = QUESTION;		
 	}
 
-	public void setMineCovered(int x, int y) {
-		states[x][y] = COVERED;
+	public void setMineCovered(int x, int y) {		
+			states[x][y] = COVERED;		
 	}
-
+	
 	private boolean checkVictory() {
 		boolean victory = true;
 		for (int x = 0; x < width; x++) {
@@ -152,7 +156,7 @@ public class Minefield {
 		return gameFinished;
 	}
 
-	private void placeMines(int plX, int plY) {
+	private void placeMines(int plX, int plY) {		
 		for (int i = 0; i < numMines; i++) {
 			int x = 0;
 			int y = 0;

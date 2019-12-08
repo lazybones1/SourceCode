@@ -9,11 +9,10 @@ public class ChallengeMode extends GameWindow {
 	private static int challegneHeight = 0;
 	private static int challengeMinesNum = 0;
 	private static boolean ischallenge = false;
-
-	public int getLife(int life) {
+	
+	public int getLife(int life){
 		return life;
 	}
-
 	public static boolean isChallenge() {
 		return ischallenge;
 	}
@@ -51,7 +50,7 @@ public class ChallengeMode extends GameWindow {
 		JOptionPane.showMessageDialog(
 				null, "Congratulations. You managed to discover all the mines in "
 						+ (minefield.getGameDuration() / 1000) + " seconds",
-				"victory", JOptionPane.INFORMATION_MESSAGE);
+				"victory", JOptionPane.INFORMATION_MESSAGE);		
 		if (isChallenge()) {
 			setChallengeMinesNum(getChallengeMinesNum() + 4);
 			setChallengeWidth(getChallengeWidth() + 3);

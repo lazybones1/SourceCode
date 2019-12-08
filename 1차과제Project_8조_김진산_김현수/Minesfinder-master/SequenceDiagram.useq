@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.14" icons="true" automaticImage="PNG">  
+  <object id="1" language="java" name="pt.technic.apps.minesfinder.Main" project="Minesfinder-master" 
+    file="/Minesfinder-master/src/pt/technic/apps/minesfinder/Main.java" binary="false" label="main" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="137" y="0"/>    
+    <execution id="2">      
+      <position height="84" width="0" x="0" y="100"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="21" width="0" x="0" y="142"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="pt.technic.apps.minesfinder.MinesFinder" project="Minesfinder-master" 
+    file="/Minesfinder-master/src/pt/technic/apps/minesfinder/MinesFinder.java" binary="false" label="minesFinder" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="229" y="0"/>    
+    <execution id="6">      
+      <position height="224" width="0" x="0" y="84"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="94" width="0" x="0" y="126"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="21" width="0" x="0" y="178"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="21" width="0" x="0" y="266"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="556" width="0" x="0" y="331"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="493" width="0" x="0" y="373"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="84" width="0" x="0" y="892"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="21" width="0" x="0" y="934"/>    
+    </execution>  
+  </object>  
+  <object id="27" language="java" name="pt.technic.apps.minesfinder.GameWindow" project="Minesfinder-master" 
+    file="/Minesfinder-master/src/pt/technic/apps/minesfinder/GameWindow.java" binary="false" label="&lt;static&gt;" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="17">      
+      <position height="21" width="0" x="0" y="656"/>    
+    </execution>  
+  </object>  
+  <object id="28" language="java" name="pt.technic.apps.minesfinder.MultiplayMode" project="Minesfinder-master" 
+    file="/Minesfinder-master/src/pt/technic/apps/minesfinder/MultiplayMode.java" binary="false" 
+    label="clientgameWindow" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="19">      
+      <position height="21" width="0" x="0" y="698"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="21" width="0" x="0" y="824"/>    
+    </execution>  
+  </object>  
+  <object id="29" language="java" name="pt.technic.apps.minesfinder.Minefield" project="Minesfinder-master" 
+    file="/Minesfinder-master/src/pt/technic/apps/minesfinder/Minefield.java" binary="false" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="21">      
+      <position height="21" width="0" x="0" y="740"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="main(java.lang.String[]):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="7" operation="MinesFinder()" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" operation="saveGameRecords():void" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="initComponents():void" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="14" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" operation="setLife(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="18" operation="MultiplayMode(pt.technic.apps.minesfinder.Minefield,java.lang.String)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="20" operation="Minefield(int,int,int)" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" operation="setVisible(boolean):void" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="25" operation="btnChallengeActionPerformed(java.awt.event.ActionEvent):void" asynchronous="false">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>
+</sequence-diagram>

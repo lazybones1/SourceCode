@@ -16,7 +16,6 @@ public class Run {
 			java.util.logging.Logger.getLogger(MinesFinder.class.getName()).log(java.util.logging.Level.SEVERE, null,
 					ex);
 		}
-
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new MinesFinder().setVisible(true);

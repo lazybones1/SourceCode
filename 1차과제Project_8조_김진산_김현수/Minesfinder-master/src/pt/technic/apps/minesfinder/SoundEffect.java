@@ -36,6 +36,10 @@ public class SoundEffect {
 		clip[0].loop(clip[0].LOOP_CONTINUOUSLY);
 
 	}
+	
+	public static void bgmStop() {
+		clip[0].stop();
+	}
 
 	public static void clickClip() {
 		try {
