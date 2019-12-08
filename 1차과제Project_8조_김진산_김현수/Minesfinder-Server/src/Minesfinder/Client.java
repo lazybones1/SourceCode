@@ -42,9 +42,6 @@ public class Client {
 						logger.log(Level.INFO, "massage receive success" + socket.getRemoteSocketAddress() + " : "
 								+ Thread.currentThread().getName());
 
-//						System.out.println("massage receive success" + socket.getRemoteSocketAddress() + " : "
-//								+ Thread.currentThread().getName());
-
 //						String message = new String(buffer, 0, length, "UTF-8");
 						String message = dis.readUTF();
 						for (Client client : Server.clients) {
@@ -57,11 +54,9 @@ public class Client {
 						logger.log(Level.INFO, "message receive fail" + socket.getRemoteSocketAddress() + " : "
 								+ Thread.currentThread().getName());
 
-//						System.out.println("message receive fail" + socket.getRemoteSocketAddress() + " : "
-//								+ Thread.currentThread().getName());
 
 					} catch (Exception e2) {
-						e2.printStackTrace();
+						logger.log(Level.INFO, "exception msg", e2);
 					}
 				}
 			}
@@ -80,9 +75,6 @@ public class Client {
 					logger.log(Level.INFO, "message send success" + socket.getRemoteSocketAddress() + " : "
 							+ Thread.currentThread().getName());
 
-//					System.out.println("message send success"
-//							+ socket.getRemoteSocketAddress() + " : " + Thread.currentThread().getName());
-
 					OutputStream out = socket.getOutputStream();
 					byte[] buffer = message.getBytes("UTF-8");
 					out.write(buffer);
@@ -92,14 +84,12 @@ public class Client {
 						
 						logger.log(Level.INFO, "message send fail" + socket.getRemoteSocketAddress() + " : "
 								+ Thread.currentThread().getName());
-						
-//						System.out.println("message send fail" + socket.getRemoteSocketAddress() + " : "
-//								+ Thread.currentThread().getName());
+
 						
 						Server.clients.remove(Client.this);
 						socket.close();
 					} catch (Exception e2) {
-						e2.printStackTrace();
+						logger.log(Level.INFO, "exception msg", e2);
 					}
 				}
 			}

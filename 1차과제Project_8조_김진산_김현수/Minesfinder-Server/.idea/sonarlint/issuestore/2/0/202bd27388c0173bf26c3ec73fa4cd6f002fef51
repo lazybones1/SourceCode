@@ -1,0 +1,22 @@
+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¾…ª£î-
+Asquid:S3457t"%String contains no format specifiers.(Ô´”»ûÿÿÿÿ
+nsquid:S00117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø‘Í¾üÿÿÿÿ
+squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(†‰‰Şıÿÿÿÿ
+>squid:S2189/""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+Gsquid:S1444"0Make this "public static threadPool" field final(Û¯¾„
+<squid:S3457m"%String contains no format specifiers.(«ÏŸ
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®Ùøÿÿÿÿ
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¤£ø
+bsquid:S1192c"FDefine a constant instead of duplicating this literal "Start" 3 times.(ı·üæûÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¾»µ
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¾…ª£î-
+Dsquid:S1604,"(Make this anonymous inner class a lambda(€²¿±üÿÿÿÿ
+9squid:S2386"Make this member "protected".(†‰‰Şıÿÿÿÿ
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(†‰‰Şıÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck"SMake clients a static final constant or non-public and provide accessors if needed.(†‰‰Şıÿÿÿÿ
+msquid:S3457t"Q%n should be used in place of \n to produce the platform-specific line separator.(Ô´”»ûÿÿÿÿ
+hsquid:S3457m"Q%n should be used in place of \n to produce the platform-specific line separator.(«ÏŸ
+Rsquid:S2696@"6Make the enclosing method "static" or remove this set.(•ƒ‡Ìıÿÿÿÿ
+Isquid:S1444"-Make this "public static clients" field final(†‰‰Şıÿÿÿÿ
+„"squid:ClassVariableVisibilityCheck"VMake threadPool a static final constant or non-public and provide accessors if needed.(Û¯¾„

@@ -4,6 +4,8 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SoundEffect {
 	private final static Logger logger = Logger.getGlobal();
@@ -25,7 +27,7 @@ public class SoundEffect {
 			clip[0] = AudioSystem.getClip();
 			clip[0].open(ais);
 		} catch (Exception e) {
-			logger.log("exception msg" + e.printStackTrace().toString();
+			logger.log(Level.INFO, "exception msg", e);
 
 		}
 
@@ -44,8 +46,7 @@ public class SoundEffect {
 			clip[1] = AudioSystem.getClip();
 			clip[1].open(ais);
 		} catch (Exception e) {
-
-			logger.log("exception msg" + e.printStackTrace().toString();
+			logger.log(Level.INFO, "exception msg", e);
 		}
 
 		clip[1].start();
@@ -60,8 +61,7 @@ public class SoundEffect {
 			clip[2] = AudioSystem.getClip();
 			clip[2].open(ais);
 		} catch (Exception e) {
-
-			logger.log("exception msg" + e.printStackTrace().toString();
+			logger.log(Level.INFO, "exception msg", e);
 		}
 
 		clip[2].start();

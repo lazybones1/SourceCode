@@ -9,13 +9,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.Iterator;
-import java.util.Vector;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -42,7 +35,7 @@ public class Server extends Application {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress(IP, port));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.log(Level.INFO, "exception msg", e);
 			if (!serverSocket.isClosed()) {
 				stopServer();
 			}
@@ -60,9 +53,6 @@ public class Server extends Application {
 						
 						logger.log(Level.INFO, "client access" + socket.getRemoteSocketAddress() + " : "
 								+ Thread.currentThread().getName());
-						
-//						System.out.println("client access" + socket.getRemoteSocketAddress() + " : "
-//								+ Thread.currentThread().getName());
 						
 					} catch (Exception e) {
 						if (!serverSocket.isClosed()) {
@@ -96,7 +86,7 @@ public class Server extends Application {
 				threadPool.shutdown();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.log(Level.INFO, "exception msg", e);
 		}
 	}
 

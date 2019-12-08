@@ -1,0 +1,17 @@
+
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÅÝÒýÿÿÿÿ
+Dsquid:S1604"(Make this anonymous inner class a lambda(€²¿±üÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(‰œ‰Õúÿÿÿÿ
+Bsquid:S1481%"+Remove this unused "buffer" local variable.(ì¦Ú 
+Psquid:S4719P"9Replace charset name argument with StandardCharsets.UTF_8(öÐÍ¯
+Dsquid:S1604G"(Make this anonymous inner class a lambda(€²¿±üÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¾»µ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÅÝÒýÿÿÿÿ
+bsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(˜ÜË
+…"squid:ClassVariableVisibilityCheck"RMake socket a static final constant or non-public and provide accessors if needed.(È™…½úÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(‰œ‰Õúÿÿÿÿ
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®žÙøÿÿÿÿ
+Qsquid:S1854%":Remove this useless assignment to local variable "buffer".(ì¦Ú 
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(½‡€Àûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÅÝÒýÿÿÿÿ
+gsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(ÀÜäˆþÿÿÿÿ

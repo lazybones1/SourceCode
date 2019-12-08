@@ -73,7 +73,7 @@ public class MultiplayMode extends GameWindow {
 				socket.close();
 			}
 		} catch (Exception e) {
-			logger.log("exception msg" + e.printStackTrace().toString();
+			logger.log(Level.INFO, "exception msg", e);
 		}
 	}
 
