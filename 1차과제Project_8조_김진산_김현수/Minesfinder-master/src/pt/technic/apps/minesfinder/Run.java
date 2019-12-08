@@ -1,6 +1,6 @@
 package pt.technic.apps.minesfinder;
 
-public class Main {
+public class Run {
 
 	public static void main(String[] args) {
 		/* Set the Nimbus look and feel */
