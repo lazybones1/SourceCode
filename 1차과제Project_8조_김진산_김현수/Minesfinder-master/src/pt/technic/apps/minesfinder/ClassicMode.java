@@ -5,6 +5,26 @@ import java.awt.*;
 
 public class ClassicMode extends GameWindow {
 
+	private static String level = "";
+	public static void setLevel(String setlevel) {
+		level = setlevel;
+	}
+	
+	private void initLife() {
+		if(level.equals("Easy")) {
+			setLife(1);
+		}
+		else if (level.equals("Nomal")){
+			setLife(2);
+		}
+		else if(level.equals("Hard")) {
+			setLife(3);
+		}
+		else {
+			System.err.println("err");
+		}
+	}
+
 	@Override
 	protected void victoryAction() {
 		JOptionPane.showMessageDialog(
@@ -21,7 +41,8 @@ public class ClassicMode extends GameWindow {
 	}
 
 	public ClassicMode(Minefield minefield, RecordTable record) {
-
+		
+		initLife();
 		initComponents();
 
 		setTitle("Classic Game");

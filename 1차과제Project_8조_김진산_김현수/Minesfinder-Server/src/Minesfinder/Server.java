@@ -7,7 +7,8 @@ import java.util.Iterator;
 import java.util.Vector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -27,6 +28,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 
 public class Server extends Application {
+	
+	private final static Logger logger = Logger.getGlobal();
+	
 	public static ExecutorService threadPool;
 
 	public static Vector<Client> clients = new Vector<Client>();
@@ -53,8 +57,13 @@ public class Server extends Application {
 					try {
 						Socket socket = serverSocket.accept();
 						clients.add(new Client(socket));
-						System.out.println("client access" + socket.getRemoteSocketAddress() + " : "
+						
+						logger.log(Level.INFO, "client access" + socket.getRemoteSocketAddress() + " : "
 								+ Thread.currentThread().getName());
+						
+//						System.out.println("client access" + socket.getRemoteSocketAddress() + " : "
+//								+ Thread.currentThread().getName());
+						
 					} catch (Exception e) {
 						if (!serverSocket.isClosed()) {
 							stopServer();

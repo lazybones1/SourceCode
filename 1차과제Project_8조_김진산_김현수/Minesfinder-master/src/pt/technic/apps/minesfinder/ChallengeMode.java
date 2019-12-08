@@ -10,7 +10,9 @@ public class ChallengeMode extends GameWindow {
 	private static int challegneHeight = 0;
 	private static int challengeMinesNum = 0;
 	private static boolean ischallenge = false;
-
+	public int getLife(int life){
+		return life;
+	}
 	public static boolean isChallenge() {
 		return ischallenge;
 	}
@@ -42,6 +44,8 @@ public class ChallengeMode extends GameWindow {
 	public static void setChallengeMinesNum(int mines) {
 		challengeMinesNum = mines;
 	}
+	
+	
 
 	// -----------------------------------------
 
@@ -56,7 +60,6 @@ public class ChallengeMode extends GameWindow {
 			setChallengeMinesNum(getChallengeMinesNum() + 4);
 			setChallengeWidth(getChallengeWidth() + 3);
 			setChallengeHeight(getChallengeHeight() + 3);
-			setLife(1);
 			ChallengeMode gameWindow = new ChallengeMode(
 					new Minefield(getChallengeWidth(), getChallengeHeight(), getChallengeMinesNum()));
 			gameWindow.setVisible(true);
@@ -64,7 +67,7 @@ public class ChallengeMode extends GameWindow {
 	}
 
 	public ChallengeMode(Minefield minefield) {
-
+		setLife(1);
 		initComponents();
 		setTitle("Challenge Game");
 		isLeftPressed = false;

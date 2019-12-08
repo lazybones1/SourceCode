@@ -134,6 +134,8 @@ public class MinesFinder extends javax.swing.JFrame {
 		btnCustom = new javax.swing.JButton(); // custom
 		btnchallenge = new javax.swing.JButton();// log
 		btnExit = new javax.swing.JButton();
+		String fontStyle = "Noto Sans";
+		String setRecordLabel = "Player";
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setTitle("MinesFinder");
@@ -150,23 +152,23 @@ public class MinesFinder extends javax.swing.JFrame {
 
 		panelRecords.setBackground(new java.awt.Color(118, 206, 108));
 
-		Records.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+		Records.setFont(new java.awt.Font(fontStyle, 1, 18)); // NOI18N
 		Records.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		Records.setText("Records");
 
-		labelEasy.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+		labelEasy.setFont(new java.awt.Font(fontStyle, 0, 14)); // NOI18N
 		labelEasy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		labelEasy.setText("Easy");
 
-		labelEasyName.setText("Player");
+		labelEasyName.setText(setRecordLabel);
 
 		labelEasyPoints.setText("9999");
 
-		labelMedium.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+		labelMedium.setFont(new java.awt.Font(fontStyle, 0, 14)); // NOI18N
 		labelMedium.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		labelMedium.setText("Medium");
 
-		labelMediumName.setText("Player");
+		labelMediumName.setText(setRecordLabel);
 
 		labelMediumPoints.setText("9999");
 
@@ -174,7 +176,7 @@ public class MinesFinder extends javax.swing.JFrame {
 		labelHard.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		labelHard.setText("Hard");
 
-		labelHardName.setText("Player");
+		labelHardName.setText(setRecordLabel);
 
 		labelHardPoints.setText("9999");
 
@@ -301,36 +303,31 @@ public class MinesFinder extends javax.swing.JFrame {
 		JTextField userName = new JTextField(8);
 		JPanel userPanel = new JPanel();
 		userPanel.add(new JLabel("Name"));
-		userPanel.add(userName);
+		userPanel.add(userName);		
 
 		int result = JOptionPane.showConfirmDialog(null, userPanel, "Please Enter details",
 				JOptionPane.OK_CANCEL_OPTION);
 		if (result == JOptionPane.OK_OPTION) {
+			GameWindow.setLife(1);
 			MultiplayMode clientgameWindow = new MultiplayMode(new Minefield(16, 16, 40), userName.getText());
 			clientgameWindow.setVisible(true);
 		}
 	}
 
 	private void btnEasyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEasyActionPerformed
-		// life---------------------
-		GameWindow.setLife(1);
-		// -----------------------
+		ClassicMode.setLevel("Easy");
 		ClassicMode gameWindow = new ClassicMode(new Minefield(9, 9, 10), recordEasy);
 		gameWindow.setVisible(true);
 	}// GEN-LAST:event_btnEasyActionPerformed
 
 	private void btnMediumActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnMediumActionPerformed
-		// ---------------------
-		GameWindow.setLife(2);
-		// -----------------------
+		ClassicMode.setLevel("Nomal");
 		ClassicMode gameWindow = new ClassicMode(new Minefield(16, 16, 40), recordMedium);
 		gameWindow.setVisible(true);
 	}// GEN-LAST:event_btnMediumActionPerformed
 
 	private void btnHardActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHardActionPerformed
-		// ---------------------
-		GameWindow.setLife(3);
-		// -----------------------
+		ClassicMode.setLevel("Hard");
 		ClassicMode gameWindow = new ClassicMode(new Minefield(16, 30, 90), recordHard);
 		gameWindow.setVisible(true);
 	}// GEN-LAST:event_btnHardActionPerformed
@@ -352,11 +349,13 @@ public class MinesFinder extends javax.swing.JFrame {
 		customPanel.add(customMinesNum);
 		customPanel.add(new JLabel("L"));
 		customPanel.add(life);
-
+		
 		int result = JOptionPane.showConfirmDialog(null, customPanel, "Please Enter details",
 				JOptionPane.OK_CANCEL_OPTION);
 		if (result == JOptionPane.OK_OPTION) {
-			GameWindow.setLife(Integer.parseInt(life.getText()));
+			
+			CustomMode.setCustomLife(Integer.parseInt(life.getText()));
+			
 			CustomMode gameWindow = new CustomMode(new Minefield(Integer.parseInt(customWidth.getText()),
 					Integer.parseInt(customHeight.getText()), Integer.parseInt(customMinesNum.getText())));
 			gameWindow.setVisible(true);
@@ -369,7 +368,6 @@ public class MinesFinder extends javax.swing.JFrame {
 		ChallengeMode.setChallengeWidth(4);
 		ChallengeMode.setChallengeHeight(4);
 		ChallengeMode.setChallengeMinesNum(1);
-		GameWindow.setLife(1);
 		ChallengeMode.setChallenge(true);
 		ChallengeMode gameWindow = new ChallengeMode(new Minefield(ChallengeMode.getChallengeWidth(),
 				ChallengeMode.getChallengeHeight(), ChallengeMode.getChallengeMinesNum()));
