@@ -3,10 +3,7 @@ package pt.technic.apps.minesfinder;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- *
- * @author Gabriel Massadas
- */
+
 public class RecordTable implements Serializable {
 
 	private transient static final int MAX_CHAR = 10;

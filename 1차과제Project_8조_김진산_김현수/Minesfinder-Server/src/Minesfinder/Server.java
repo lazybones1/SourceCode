@@ -21,14 +21,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 
 public class Server extends Application {
-	
+
 	private final static Logger logger = Logger.getGlobal();
-	
+
 	public static ExecutorService threadPool;
 
 	public static Vector<Client> clients = new Vector<Client>();
 
-	private ServerSocket serverSocket;
+	ServerSocket serverSocket;
 
 	public void startServer(String IP, int port) {
 		try {
@@ -41,7 +41,6 @@ public class Server extends Application {
 			}
 			return;
 		}
-		//  client access waiting thread 
 
 		Runnable thread = new Runnable() {
 			@Override
@@ -50,10 +49,10 @@ public class Server extends Application {
 					try {
 						Socket socket = serverSocket.accept();
 						clients.add(new Client(socket));
-						
+
 						logger.log(Level.INFO, "client access" + socket.getRemoteSocketAddress() + " : "
 								+ Thread.currentThread().getName());
-						
+
 					} catch (Exception e) {
 						if (!serverSocket.isClosed()) {
 							stopServer();
@@ -67,11 +66,8 @@ public class Server extends Application {
 		threadPool.submit(thread);
 	}
 
-
-
 	public void stopServer() {
 		try {
-			// close all socket in working
 			Iterator<Client> iterator = clients.iterator();
 			while (iterator.hasNext()) {
 				Client client = iterator.next();
@@ -102,8 +98,8 @@ public class Server extends Application {
 		toggleButton.setMaxWidth(Double.MAX_VALUE);
 		BorderPane.setMargin(toggleButton, new Insets(1, 0, 0, 0));
 		root.setBottom(toggleButton);
-		String IP = "127.0.0.1";
-		int port = 9876;
+		String IP = "192.168.1.18";  // write your Server IP
+		int port = 9999;  // write your Server Port
 		toggleButton.setOnAction(event -> {
 			if (toggleButton.getText().contentEquals("Start")) {
 				startServer(IP, port);
@@ -128,7 +124,7 @@ public class Server extends Application {
 		primaryStage.show();
 
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}

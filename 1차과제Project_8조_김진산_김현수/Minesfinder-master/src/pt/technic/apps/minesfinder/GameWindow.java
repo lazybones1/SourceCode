@@ -15,14 +15,12 @@ public class GameWindow extends javax.swing.JFrame {
 	protected JMenuBar jmb = new JMenuBar();
 	protected JMenu showLifeMenu = new JMenu();
 
-	// private -> protected
 	protected ButtonMinefield[][] buttons;
 	protected Minefield minefield;
 	protected RecordTable record;
 	protected boolean isLeftPressed;
 	protected boolean isRightPressed;
 
-	//
 	private static int life = 1;
 
 	public static int getLife() {
@@ -33,12 +31,6 @@ public class GameWindow extends javax.swing.JFrame {
 		life = setlife;
 	}
 
-	// -----------------
-	/**
-	 * Creates new form GameWindow
-	 */
-
-	// public -> protected
 	protected void updateButtonsStates() {
 		for (int x = 0; x < minefield.getWidth(); x++) {
 			for (int y = 0; y < minefield.getHeight(); y++) {
@@ -59,11 +51,11 @@ public class GameWindow extends javax.swing.JFrame {
 	}
 
 	protected void clickEvent() {
-					if (minefield.isGameFinished()) {
-						if (minefield.isPlayerDefeated()) {
-							defeatedAction();
-						} else {
-							victoryAction();
+		if (minefield.isGameFinished()) {
+			if (minefield.isPlayerDefeated()) {
+				defeatedAction();
+			} else {
+				victoryAction();
 			}
 			setVisible(false);
 		}
@@ -75,11 +67,9 @@ public class GameWindow extends javax.swing.JFrame {
 			ButtonMinefield button = (ButtonMinefield) e.getSource();
 			int x = button.getCol();
 			int y = button.getLine();
-			minefield.revealGrid(x, y);
-			// -----------------------------------------
+			minefield.revealGrid(x, y);			
 			showLifeMenu.setText("life : " + Integer.toString(getLife()));
-			SoundEffect.clickClip();
-			// ---------------------------------------
+			SoundEffect.clickClip();			
 			updateButtonsStates();
 			clickEvent();
 		}
@@ -88,7 +78,6 @@ public class GameWindow extends javax.swing.JFrame {
 	MouseListener mouseListener = new MouseListener() {
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// double click--------------------------------------------------------------------------------
 			ButtonMinefield botao = (ButtonMinefield) e.getSource();
 			int x = botao.getCol();
 			int y = botao.getLine();
@@ -104,7 +93,7 @@ public class GameWindow extends javax.swing.JFrame {
 					minefield.doubleCliked(x, y);
 				}
 			}
-			// -------------------------------------------------------------------------------
+
 			if (e.getButton() == MouseEvent.BUTTON3) {
 				if (minefield.getGridState(x, y) == minefield.COVERED) {
 					minefield.setMineMarked(x, y);
@@ -139,7 +128,6 @@ public class GameWindow extends javax.swing.JFrame {
 		}
 	};
 
-	// Create buttons for the player
 	protected void createButtons() {
 		for (int x = 0; x < minefield.getWidth(); x++) {
 			for (int y = 0; y < minefield.getHeight(); y++) {
@@ -150,19 +138,16 @@ public class GameWindow extends javax.swing.JFrame {
 			}
 		}
 	}
-
-	// private -> protected
+	
 	@SuppressWarnings("unchecked")
 	protected void initComponents() {
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 		setTitle("default");
 		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-		// -------------------------------------------------------------------
 		showLifeMenu.setText("life : " + Integer.toString(getLife()));
 		jmb.add(showLifeMenu);
 		setJMenuBar(jmb);
-		// -------------------------------------------------------------------
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
 
@@ -172,5 +157,5 @@ public class GameWindow extends javax.swing.JFrame {
 				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 553, Short.MAX_VALUE));
 
 		pack();
-	}// </editor-fold>//GEN-END:initComponents
+	}
 }

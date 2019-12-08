@@ -12,9 +12,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MultiplayMode extends GameWindow {
-	
-	private final static Logger logger = Logger.getGlobal();
 
+	private final static Logger logger = Logger.getGlobal();
 
 	private Socket socket;
 	private String userName;
@@ -42,12 +41,9 @@ public class MultiplayMode extends GameWindow {
 			} else {
 				send(userName + " " + "finish");
 			}
-			// юс╫ц
-			setVisible(false);
 		}
 	}
 
-	//
 	private void startClient(String IP, int port) {
 		Thread thread = new Thread() {
 			public void run() {
@@ -57,7 +53,7 @@ public class MultiplayMode extends GameWindow {
 				} catch (Exception e) {
 					if (!socket.isClosed()) {
 						stopClient();
-						logger.log(Level.INFO, "server access fail"); 						
+						logger.log(Level.INFO, "server access fail");
 						Platform.exit();
 					}
 				}
@@ -67,18 +63,16 @@ public class MultiplayMode extends GameWindow {
 		thread.start();
 	}
 
-	// public -> private
 	private void stopClient() {
 		try {
 			if (socket != null && !socket.isClosed()) {
 				socket.close();
 			}
 		} catch (Exception e) {
-			logger.log(Level.INFO, "exception msg", e);			
+			logger.log(Level.INFO, "exception msg", e);
 		}
 	}
 
-	// public -> private
 	private void receive() {
 		String dialog = "Result!";
 		while (true) {
@@ -92,8 +86,7 @@ public class MultiplayMode extends GameWindow {
 				String[] strarr = message.split(" ");
 				if (strarr[0].equals(userName)) {
 					if (strarr[1].equals("finish")) {
-						JOptionPane.showMessageDialog(null, userName + " win", dialog,
-								JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, userName + " win", dialog, JOptionPane.INFORMATION_MESSAGE);
 					} else {
 						JOptionPane.showMessageDialog(null, userName + " lose", dialog,
 								JOptionPane.INFORMATION_MESSAGE);
@@ -103,8 +96,7 @@ public class MultiplayMode extends GameWindow {
 						JOptionPane.showMessageDialog(null, userName + " lose", dialog,
 								JOptionPane.INFORMATION_MESSAGE);
 					} else {
-						JOptionPane.showMessageDialog(null, userName + " win", dialog,
-								JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, userName + " win", dialog, JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				setVisible(false);
@@ -116,7 +108,6 @@ public class MultiplayMode extends GameWindow {
 		}
 	}
 
-	// public -> private
 	private void send(String message) {
 		Thread thread = new Thread() {
 			public void run() {

@@ -3,10 +3,7 @@ package pt.technic.apps.minesfinder;
 import java.awt.Color;
 import javax.swing.JButton;
 
-/**
- *
- * @author Gabriel Massadas
- */
+
 public class ButtonMinefield extends JButton {
 	private int state;
 	private int col;

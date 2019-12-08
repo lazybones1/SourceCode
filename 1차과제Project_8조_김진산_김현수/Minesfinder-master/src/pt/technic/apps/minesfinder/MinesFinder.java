@@ -6,10 +6,7 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Gabriel Massadas
- */
+
 public class MinesFinder extends javax.swing.JFrame {
 
 	private RecordTable recordEasy;
