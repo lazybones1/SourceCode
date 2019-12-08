@@ -12,17 +12,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MultiplayMode extends GameWindow {
-
+	
 	private final static Logger logger = Logger.getGlobal();
+
 
 	private Socket socket;
 	private String userName;
 
 	public MultiplayMode(Minefield minefield, String userName) {
-		startClient("211.33.5.110", 9876);
-		this.userName = userName;
+		startClient("211.33.5.110", 9999);
 
-		setLife(1);
+		this.userName = userName;
+		GameWindow.setLife(1);
 		initComponents();
 		setTitle("Multi Game");
 
@@ -39,24 +40,24 @@ public class MultiplayMode extends GameWindow {
 			if (minefield.isPlayerDefeated()) {
 				send(userName + " " + "broke");
 			} else {
-				send(userName + "  " + "finish");
+				send(userName + " " + "finish");
 			}
-			//
+			// юс╫ц
 			setVisible(false);
 		}
 	}
 
 	//
-	private void startClient(String ip, int port) {
+	private void startClient(String IP, int port) {
 		Thread thread = new Thread() {
 			public void run() {
 				try {
-					socket = new Socket(ip, port);
+					socket = new Socket(IP, port);
 					receive();
 				} catch (Exception e) {
 					if (!socket.isClosed()) {
 						stopClient();
-						logger.log(Level.INFO, "server access fail");
+						logger.log(Level.INFO, "server access fail"); 						
 						Platform.exit();
 					}
 				}
@@ -73,7 +74,7 @@ public class MultiplayMode extends GameWindow {
 				socket.close();
 			}
 		} catch (Exception e) {
-			logger.log(Level.INFO, "exception msg", e);
+			logger.log(Level.INFO, "exception msg", e);			
 		}
 	}
 
@@ -87,11 +88,12 @@ public class MultiplayMode extends GameWindow {
 				int length = in.read(buffer);
 				if (length == -1)
 					throw new IOException();
-				String message = new String(buffer, 0, length, "UTF_8");
+				String message = new String(buffer, 0, length, "UTF-8");
 				String[] strarr = message.split(" ");
 				if (strarr[0].equals(userName)) {
 					if (strarr[1].equals("finish")) {
-						JOptionPane.showMessageDialog(null, userName + " win", dialog, JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, userName + " win", dialog,
+								JOptionPane.INFORMATION_MESSAGE);
 					} else {
 						JOptionPane.showMessageDialog(null, userName + " lose", dialog,
 								JOptionPane.INFORMATION_MESSAGE);
@@ -101,7 +103,8 @@ public class MultiplayMode extends GameWindow {
 						JOptionPane.showMessageDialog(null, userName + " lose", dialog,
 								JOptionPane.INFORMATION_MESSAGE);
 					} else {
-						JOptionPane.showMessageDialog(null, userName + " win", dialog, JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, userName + " win", dialog,
+								JOptionPane.INFORMATION_MESSAGE);
 					}
 				}
 				setVisible(false);
@@ -116,11 +119,10 @@ public class MultiplayMode extends GameWindow {
 	// public -> private
 	private void send(String message) {
 		Thread thread = new Thread() {
-
 			public void run() {
 				try {
 					OutputStream out = socket.getOutputStream();
-					byte[] buffer = message.getBytes("UTF_8");
+					byte[] buffer = message.getBytes("UTF-8");
 					out.write(buffer);
 					out.flush();
 				} catch (Exception e) {
