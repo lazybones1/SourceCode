@@ -190,3 +190,5 @@ b
 2src/pt/technic/apps/minesfinder/MultiplayMode.java,e\a\ea66e794719d3380e3a2f306d70c47278d2b51d6
 `
 0src/pt/technic/apps/minesfinder/MinesFinder.java,2\d\2dcee479048b0a2f17859ca3668b37a09629bc2b
+A
+classDiagram.ucls,3\e\3e93b998809f76e5a55811a26d5d24c4c6297339

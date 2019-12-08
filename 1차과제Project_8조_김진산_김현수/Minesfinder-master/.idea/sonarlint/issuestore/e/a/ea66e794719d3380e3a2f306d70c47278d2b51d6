@@ -1,7 +1,7 @@
 
-^squid:S1192*"GDefine a constant instead of duplicating this literal "finish" 3 times.(š“´ÿ
-isquid:S3776Q"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‚œ 
 Qsquid:S11614":Add the "@Override" annotation above this method signature(“–ış
-Fsquid:S1148L"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8åÇ™î-
-vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®Ùøÿÿÿÿ8‹Ğš–î-
+^squid:S1192*"GDefine a constant instead of duplicating this literal "finish" 3 times.(š“´ÿ
 Xsquid:S1161x":Add the "@Override" annotation above this method signature(“–ış8¯›âí-
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8åÇ™î-
+vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®Ùøÿÿÿÿ8‹Ğš–î-
+isquid:S3776Q"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‚œ 
