@@ -1,0 +1,9 @@
+
+isquid:S3776R"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‚œ 
+Usquid:S4719["9Replace charset name argument with StandardCharsets.UTF_8(Ÿ«‘½üÿÿÿÿ
+Psquid:S4719}"9Replace charset name argument with StandardCharsets.UTF_8(öĞÍ¯
+Qsquid:S11615":Add the "@Override" annotation above this method signature(“–ış
+isquid:S001173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±ª’
+^squid:S1192+"GDefine a constant instead of duplicating this literal "finish" 3 times.(š“´ÿ
+Qsquid:S1161z":Add the "@Override" annotation above this method signature(“–ış
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®Ùøÿÿÿÿ

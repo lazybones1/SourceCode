@@ -1,0 +1,22 @@
+
+hsquid:S3457r"Q%n should be used in place of \n to produce the platform-specific line separator.(ŞËŠ
+?squid:S1148Q"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>squid:S2189,""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+squid:S1149"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(†‰‰Şıÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck"SMake clients a static final constant or non-public and provide accessors if needed.(†‰‰Şıÿÿÿÿ
+hsquid:S00117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èô¿%
+Asquid:S3457k"%String contains no format specifiers.(ºòñ°üÿÿÿÿ
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(†‰‰Şıÿÿÿÿ
+Isquid:S1444"-Make this "public static clients" field final(†‰‰Şıÿÿÿÿ
+„"squid:ClassVariableVisibilityCheck"VMake threadPool a static final constant or non-public and provide accessors if needed.(Û¯¾„
+Gsquid:S1444"0Make this "public static threadPool" field final(Û¯¾„
+Dsquid:S1604)"(Make this anonymous inner class a lambda(€²¿±üÿÿÿÿ
+T
+squid:S1060"9Replace this use of System.out or System.err by a logger.(Êäîİøÿÿÿÿ
+msquid:S3457k"Q%n should be used in place of \n to produce the platform-specific line separator.(ºòñ°üÿÿÿÿ
+9squid:S2386"Make this member "protected".(†‰‰Şıÿÿÿÿ
+Rsquid:S2696<"6Make the enclosing method "static" or remove this set.(•ƒ‡Ìıÿÿÿÿ
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¤£ø
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¾»µ
+<squid:S3457r"%String contains no format specifiers.(ŞËŠ
+?squid:S1148!"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

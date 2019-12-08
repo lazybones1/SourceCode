@@ -1,0 +1,14 @@
+
+^squid:S1192%"GDefine a constant instead of duplicating this literal "finish" 3 times.(š“´ÿ
+Qsquid:S1161q":Add the "@Override" annotation above this method signature(“–ış
+T
+squid:S1064"9Replace this use of System.out or System.err by a logger.(Ñ¬Šãùÿÿÿÿ
+_squid:S1192V"HDefine a constant instead of duplicating this literal "Result!" 4 times.(”üƒ
+?squid:S1148E"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Qsquid:S1161-":Add the "@Override" annotation above this method signature(“–ış
+Psquid:S4719t"9Replace charset name argument with StandardCharsets.UTF_8(öĞÍ¯
+isquid:S00117+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±ª’
+esquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(Êˆ‡
+isquid:S3776J"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‚œ 
+Usquid:S4719R"9Replace charset name argument with StandardCharsets.UTF_8(Ÿ«‘½üÿÿÿÿ
+Dsquid:S1948"(Make "socket" transient or serializable.(Å’¬Úşÿÿÿÿ

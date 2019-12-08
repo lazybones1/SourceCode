@@ -1,0 +1,9 @@
+
+squid:S1186†"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ë´çıÿÿÿÿ
+?squid:S1604H"(Make this anonymous inner class a lambda(¶íóĞ
+?squid:S1948H"(Make "action" transient or serializable.(¶íóĞ
+squid:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œº´‚üÿÿÿÿ
+˜squid:S1186y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ñÜš¤
+esquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(ºšßÏ
+Fsquid:S1948X"/Make "mouseListener" transient or serializable.(ø¸åì
+Msquid:S2387X"6"mouseListener" is the name of a field in "Component".(ø¸åì

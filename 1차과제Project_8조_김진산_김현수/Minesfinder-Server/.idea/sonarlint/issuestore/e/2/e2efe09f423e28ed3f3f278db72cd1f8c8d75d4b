@@ -1,0 +1,11 @@
+
+gsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(ÀÜäˆþÿÿÿÿ
+bsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(˜ÜË
+…"squid:ClassVariableVisibilityCheck"RMake socket a static final constant or non-public and provide accessors if needed.(È™…½úÿÿÿÿ
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®žÙøÿÿÿÿ
+Dsquid:S1604"(Make this anonymous inner class a lambda(€²¿±üÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç¾»µ
+Psquid:S4719O"9Replace charset name argument with StandardCharsets.UTF_8(öÐÍ¯
+Qsquid:S1854%":Remove this useless assignment to local variable "buffer".(ì¦Ú 
+Bsquid:S1481%"+Remove this unused "buffer" local variable.(ì¦Ú 
+Dsquid:S1604F"(Make this anonymous inner class a lambda(€²¿±üÿÿÿÿ

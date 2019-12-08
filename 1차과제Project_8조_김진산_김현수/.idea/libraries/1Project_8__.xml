@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="1차과제Project_8조_김진산_김현수">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Minesfinder-Server.zip!/" />
+      <root url="jar://$PROJECT_DIR$/Minesfinder-master.zip!/" />
+      <root url="file://C:/Program Files/Java/javafx-sdk-11.0.2" />
+      <root url="jar://C:/Program Files/Java/jre1.8.0_231/lib/ext/jfxrt.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/Program Files/Java/javafx-sdk-11.0.2" recursive="false" />
+  </library>
+</component>
