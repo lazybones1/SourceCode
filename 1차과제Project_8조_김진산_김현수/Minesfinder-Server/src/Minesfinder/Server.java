@@ -35,7 +35,7 @@ public class Server extends Application {
 
 	public static Vector<Client> clients = new Vector<Client>();
 
-	ServerSocket serverSocket;
+	private ServerSocket serverSocket;
 
 	public void startServer(String IP, int port) {
 		try {

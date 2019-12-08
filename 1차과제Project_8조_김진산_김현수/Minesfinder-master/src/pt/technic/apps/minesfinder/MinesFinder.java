@@ -130,7 +130,7 @@ public class MinesFinder extends javax.swing.JFrame {
 		btnEasy = new javax.swing.JButton();
 		btnMedium = new javax.swing.JButton();
 		btnHard = new javax.swing.JButton();
-		btn2p = new javax.swing.JButton(); // 2p
+		btnMulty = new javax.swing.JButton(); // 2p
 		btnCustom = new javax.swing.JButton(); // custom
 		btnchallenge = new javax.swing.JButton();// log
 		btnExit = new javax.swing.JButton();
@@ -227,13 +227,13 @@ public class MinesFinder extends javax.swing.JFrame {
 
 		panelBtns.setLayout(new java.awt.GridLayout(2, 0));
 
-		btn2p.setText("2p");
-		btn2p.addActionListener(new java.awt.event.ActionListener() {
+		btnMulty.setText("Multy");
+		btnMulty.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				btn2pActionPerformed(evt);
+				btnMultyActionPerformed(evt);
 			}
 		});
-		panelBtns.add(btn2p);
+		panelBtns.add(btnMulty);
 
 		btnEasy.setIcon(
 				new javax.swing.ImageIcon(getClass().getResource("/pt/technic/apps/minesfinder/resources/easy.png"))); // NOI18N
@@ -299,7 +299,7 @@ public class MinesFinder extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 	
 	//protected -> private
-	private void btn2pActionPerformed(ActionEvent evt) {
+	private void btnMultyActionPerformed(ActionEvent evt) {
 		JTextField userName = new JTextField(8);
 		JPanel userPanel = new JPanel();
 		userPanel.add(new JLabel("Name"));
@@ -386,7 +386,7 @@ public class MinesFinder extends javax.swing.JFrame {
 	private javax.swing.JButton btnExit;
 	private javax.swing.JButton btnHard;
 	private javax.swing.JButton btnMedium;
-	private javax.swing.JButton btn2p; // 2p
+	private javax.swing.JButton btnMulty; // 2p
 	private javax.swing.JButton btnCustom; // custom
 	private javax.swing.JButton btnchallenge;// challenge
 	private javax.swing.JLabel labelEasy;

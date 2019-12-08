@@ -20,9 +20,6 @@ public class ClassicMode extends GameWindow {
 		else if(level.equals("Hard")) {
 			setLife(3);
 		}
-		else {
-			System.err.println("err");
-		}
 	}
 
 	@Override

@@ -63,9 +63,7 @@ public class Minefield {
 
 			if (mines[x][y]) {
 				states[x][y] = BUSTED;
-				
 				SoundEffect.boomClip();
-				
 				if (GameWindow.getLife() == 1) {
 					GameWindow.setLife(GameWindow.getLife() - 1);
 					if (ChallengeMode.isChallenge()) {
@@ -114,22 +112,16 @@ public class Minefield {
 		}
 	}
 
-	public void setMineMarked(int x, int y) {
-		if (states[x][y] == COVERED || states[x][y] == QUESTION) {
-			states[x][y] = MARKED;
-		}
+	public void setMineMarked(int x, int y) {		
+			states[x][y] = MARKED;		
 	}
 
-	public void setMineQuestion(int x, int y) {
-		if (states[x][y] == COVERED || states[x][y] == MARKED) {
-			states[x][y] = QUESTION;
-		}
+	public void setMineQuestion(int x, int y) {		
+			states[x][y] = QUESTION;		
 	}
 
-	public void setMineCovered(int x, int y) {
-		if (states[x][y] == MARKED || states[x][y] == QUESTION) {
-			states[x][y] = COVERED;
-		}
+	public void setMineCovered(int x, int y) {		
+			states[x][y] = COVERED;		
 	}
 	
 	//public ->private

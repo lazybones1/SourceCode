@@ -1,11 +1,6 @@
 
-žsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›ðÀj8©çÄ÷í-
-isquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(†€éˆ8¥þ²–î-
-Fsquid:S1148 "#Use a logger to log this exception.(ÚÊ“êûÿÿÿÿ8Å‚²–î-
-Fsquid:S1148C"#Use a logger to log this exception.(ÚÊ“êûÿÿÿÿ8åæ²–î-
-vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¥®žÙøÿÿÿÿ8©Ö°–î-
-isquid:CommentedOutCodeLine!"<This block of commented-out lines of code should be removed.(†€éˆ8‹Õ±–î-
-Fsquid:S11483"#Use a logger to log this exception.(ÚÊ“êûÿÿÿÿ8åæ²–î-
-3squid:S1118"Hide this public constructor.(›ðÀj
-Lsquid:S2209&"5Change this instance-reference to a static reference.(†Ú˜
-isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(†€éˆ8¥þ²–î-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8”†Ç™î-
+Lsquid:S2209!"5Change this instance-reference to a static reference.(†Ú˜
+Fsquid:S1148/"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8åæ²–î-
+Fsquid:S1148?"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8åæ²–î-
+Xsquid:S1118":Add a private constructor to hide the implicit public one.(Úƒçú8•€Ö™î-

@@ -12,7 +12,7 @@ public class Client {
 
 	private final static Logger logger = Logger.getGlobal();
 
-	Socket socket;
+	public Socket socket;
 
 	public Client(Socket socket) {
 

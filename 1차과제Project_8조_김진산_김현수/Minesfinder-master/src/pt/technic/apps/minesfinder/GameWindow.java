@@ -13,7 +13,7 @@ import java.awt.event.MouseListener;
 public class GameWindow extends javax.swing.JFrame {
 
 	protected JMenuBar jmb = new JMenuBar();
-	protected JMenu jm = new JMenu();
+	protected JMenu showLifeMenu = new JMenu();
 
 	// private -> protected
 	protected ButtonMinefield[][] buttons;
@@ -77,7 +77,7 @@ public class GameWindow extends javax.swing.JFrame {
 			int y = button.getLine();
 			minefield.revealGrid(x, y);
 			// -----------------------------------------
-			jm.setText("life : " + Integer.toString(getLife()));
+			showLifeMenu.setText("life : " + Integer.toString(getLife()));
 			SoundEffect.clickClip();
 			// ---------------------------------------
 			updateButtonsStates();
@@ -140,7 +140,7 @@ public class GameWindow extends javax.swing.JFrame {
 	};
 
 	// Create buttons for the player
-	public void createButtons() {
+	protected void createButtons() {
 		for (int x = 0; x < minefield.getWidth(); x++) {
 			for (int y = 0; y < minefield.getHeight(); y++) {
 				buttons[x][y] = new ButtonMinefield(x, y);
@@ -159,8 +159,8 @@ public class GameWindow extends javax.swing.JFrame {
 		setTitle("default");
 		setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 		// -------------------------------------------------------------------
-		jm.setText("life : " + Integer.toString(getLife()));
-		jmb.add(jm);
+		showLifeMenu.setText("life : " + Integer.toString(getLife()));
+		jmb.add(showLifeMenu);
 		setJMenuBar(jmb);
 		// -------------------------------------------------------------------
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

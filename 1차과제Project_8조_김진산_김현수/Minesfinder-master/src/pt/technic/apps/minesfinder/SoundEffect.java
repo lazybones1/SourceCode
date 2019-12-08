@@ -15,10 +15,6 @@ public class SoundEffect {
 	// 0 : BGM
 	// 1 : ClickS
 	// 2 : BoomS
-
-	public SoundEffect() {
-	}
-
 	public static void bgmClip() {
 		try {
 			File base = new File(file[0]);
