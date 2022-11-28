@@ -4,9 +4,19 @@
 인원 : [김진산](https://github.com/lazybones1), [김현수](https://github.com/kimhyun5u)
 
 ---
+
+<br/>
+
+## 기술 스택
+<img src="https://img.shields.io/badge/JAVA-1E8CBE?style=for-the-badge">
+<img src="https://img.shields.io/badge/JAVA_SWING-1E8CBE?style=for-the-badge&logoColor=white">
+<img src="https://img.shields.io/badge/Stan4J-1E8CBE?style=for-the-badge&logoColor=white">
+
+<br/>
+
 ## 추가 기능
 1. 사용자 설정 게임   
-    사용자에게 가로 칸, 세로 칸, 지뢰의 수를 각각 입력 받아 그에 맞게 게임 화면을 만든다. 사용자 설정 게임을 시작하면 가로 칸, 세로 칸, 지뢰의 수를 입력하는 창이 뜨고 그에 맞게 게임 화면을 만ㅍ들어 플레이 할 수 있도록 한다. 가로 칸, 세로 칸, 지로의 수에 따라 기록이 기록은 저장하지 않는다.   
+    사용자에게 가로 칸, 세로 칸, 지뢰의 수를 각각 입력 받아 그에 맞게 게임 화면을 만든다. 사용자 설정 게임을 시작하면 가로 칸, 세로 칸, 지뢰의 수를 입력하는 창이 뜨고 그에 맞게 게임 화면을 만들어 플레이 할 수 있도록 한다. 가로 칸, 세로 칸, 지로의 수에 따라 기록이 기록은 저장하지 않는다.   
     
     <img src="https://user-images.githubusercontent.com/53360337/203187506-98d48a13-2331-4747-b1d8-dd9f859db9ae.png" width="300px" height="300px">
 
